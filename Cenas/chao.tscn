@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6txe5y7pvphg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jl620"]
+size = Vector2(1163, 20)
+
+[node name="Chao" type="StaticBody2D"]
+
+[node name="ColisaoChao" type="CollisionShape2D" parent="."]
+position = Vector2(571.5, 0)
+shape = SubResource("RectangleShape2D_jl620")

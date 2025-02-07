@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://2wysbr4xf7kl"]
+
+[ext_resource type="PackedScene" uid="uid://c6txe5y7pvphg" path="res://Cenas/chao.tscn" id="1_nfeng"]
+[ext_resource type="PackedScene" uid="uid://dx1aspm7tr5vk" path="res://Cenas/gato.tscn" id="2_2lhuc"]
+[ext_resource type="PackedScene" uid="uid://bheysq80extaj" path="res://Cenas/cao.tscn" id="3_efasw"]
+
+[node name="Principal" type="Node2D"]
+
+[node name="Chao" parent="." instance=ExtResource("1_nfeng")]
+position = Vector2(-3, 606)
+
+[node name="Gato" parent="." instance=ExtResource("2_2lhuc")]
+position = Vector2(145, 323)
+
+[node name="Cao" parent="." instance=ExtResource("3_efasw")]
+position = Vector2(916, 312)
