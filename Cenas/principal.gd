@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 
 
 func gatoAcertou() -> void:
-	Barravida_cao.text = "Cao: %d" %cao.retornaVida()
 	cao.levouDano(1)
+	Barravida_cao.text = "Cao: %d" %cao.retornaVida()
+	
 	Barravida_gato.text = "Gato: %d" %gato.retornaVida()
