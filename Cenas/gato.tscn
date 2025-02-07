@@ -161,7 +161,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j0ss"]
-size = Vector2(241, 68)
+size = Vector2(98, 68)
 
 [node name="Gato" type="CharacterBody2D"]
 script = ExtResource("1_5iqdn")
@@ -172,8 +172,8 @@ shape = SubResource("RectangleShape2D_qamxe")
 
 [node name="SAnimGato" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tugg0")
+animation = &"ataque"
 autoplay = "default"
-frame_progress = 0.0133197
 offset = Vector2(50, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -185,7 +185,7 @@ libraries = {
 [node name="AreaGato" type="Area2D" parent="."]
 
 [node name="ColisaoAtaqueGato" type="CollisionShape2D" parent="AreaGato"]
-position = Vector2(209.5, 183)
+position = Vector2(138, 183)
 shape = SubResource("RectangleShape2D_5j0ss")
 disabled = true
 
@@ -193,4 +193,11 @@ disabled = true
 wait_time = 0.3
 one_shot = true
 
+[node name="TimerAtaque" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="area_entered" from="AreaGato" to="." method="achouAlgo"]
+[connection signal="body_entered" from="AreaGato" to="." method="achouAlgo"]
 [connection signal="timeout" from="TimerReset" to="." method="resetapeloTimer"]
+[connection signal="timeout" from="TimerAtaque" to="." method="caboAtaque"]

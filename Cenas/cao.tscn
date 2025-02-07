@@ -176,7 +176,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5ewy"]
-size = Vector2(241, 68)
+size = Vector2(115.5, 68)
 
 [node name="Cao" type="CharacterBody2D"]
 script = ExtResource("1_27x3j")
@@ -187,6 +187,7 @@ shape = SubResource("RectangleShape2D_fotbi")
 
 [node name="SAnimCao" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8kdpp")
+animation = &"ataque"
 autoplay = "default"
 offset = Vector2(50, 0)
 flip_h = true
@@ -200,7 +201,7 @@ libraries = {
 [node name="AreaCao" type="Area2D" parent="."]
 
 [node name="ColisaoAtaqueCao" type="CollisionShape2D" parent="AreaCao"]
-position = Vector2(-59, 190)
+position = Vector2(3.75, 190)
 shape = SubResource("RectangleShape2D_y5ewy")
 disabled = true
 
@@ -208,4 +209,7 @@ disabled = true
 wait_time = 0.3
 one_shot = true
 
+[node name="TimerAtaque" type="Timer" parent="."]
+
 [connection signal="timeout" from="TimerReset" to="." method="resetapeloTimer"]
+[connection signal="timeout" from="TimerAtaque" to="." method="caboAtaque"]

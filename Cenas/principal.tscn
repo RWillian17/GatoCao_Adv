@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://2wysbr4xf7kl"]
+[gd_scene load_steps=5 format=3 uid="uid://2wysbr4xf7kl"]
 
+[ext_resource type="Script" path="res://Cenas/principal.gd" id="1_1p1b8"]
 [ext_resource type="PackedScene" uid="uid://c6txe5y7pvphg" path="res://Cenas/chao.tscn" id="1_nfeng"]
 [ext_resource type="PackedScene" uid="uid://dx1aspm7tr5vk" path="res://Cenas/gato.tscn" id="2_2lhuc"]
 [ext_resource type="PackedScene" uid="uid://bheysq80extaj" path="res://Cenas/cao.tscn" id="3_efasw"]
 
 [node name="Principal" type="Node2D"]
+script = ExtResource("1_1p1b8")
 
 [node name="Chao" parent="." instance=ExtResource("1_nfeng")]
 position = Vector2(-3, 606)
@@ -14,3 +16,20 @@ position = Vector2(145, 323)
 
 [node name="Cao" parent="." instance=ExtResource("3_efasw")]
 position = Vector2(916, 312)
+
+[node name="VidaCao" type="Label" parent="."]
+offset_left = 913.0
+offset_right = 1153.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 50
+text = "Cao: 100"
+
+[node name="VidaGato" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 4.0
+offset_right = 281.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 50
+text = "Gato: 100"
+
+[connection signal="gatoAcertou" from="Gato" to="." method="gatoAcertou"]
